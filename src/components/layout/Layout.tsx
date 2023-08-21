@@ -195,7 +195,7 @@ import Image from "next/image";
 import classes from "styles/scrollbar.module.css";
 import "animate.css";
 import { Transition } from "react-transition-group";
-import hangerEmpty from "assets/hangerEmpty.png";
+import hangerEmpty from "@/public/assets/hangerEmpty.png";
 import { AiFillGithub } from "react-icons/ai";
 import { BsFacebook } from "react-icons/bs";
 import { useAutoAnimate } from "@formkit/auto-animate/react";

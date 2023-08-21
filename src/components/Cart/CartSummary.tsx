@@ -6,7 +6,7 @@ import useStore from "src/store/zustand/useStore";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/router";
-import thankU from "assets/thankyou2.png";
+import thankU from "@/public/assets/thankyou2.png";
 import Image from "next/image";
 import { Transition } from "react-transition-group";
 import "animate.css";

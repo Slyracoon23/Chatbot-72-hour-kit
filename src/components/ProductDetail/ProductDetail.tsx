@@ -2,7 +2,7 @@ import CurrentPath from "../common/CurrentPath";
 import MainContent from "./MainContent/MainContent";
 import Rating from "./Rating";
 import Image from "next/image";
-import footerImage from "assets/footer3.jpg";
+import footerImage from "@/public/assets/footer3.jpg";
 import Product from "src/model/Product";
 import { useRouter } from "next/router";
 import { useAppDispatch } from "src/store/redux-toolkit/hooks";

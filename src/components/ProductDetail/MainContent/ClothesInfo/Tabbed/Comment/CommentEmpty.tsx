@@ -1,4 +1,4 @@
-import hangerEmpty from "assets/hangerEmpty.png";
+import hangerEmpty from "@/public/assets/hangerEmpty.png";
 import Image from "next/image";
 
 export default function CommentEmpty() {

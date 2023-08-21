@@ -1,19 +1,19 @@
 import Link from "next/link";
 import ActiveLinkImprove from "src/components/layout/ActiveLinkImprove";
 import { NavData } from "src/model/NavData";
-import sun from "assets/sun.png";
+import sun from "@/public/assets/sun.png";
 import Image from "next/image";
 import { FaSearch } from "react-icons/fa";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { AiFillFire } from "react-icons/ai";
 import { BsFillPlayCircleFill } from "react-icons/bs";
 import { AiFillPlaySquare } from "react-icons/ai";
-import guy from "assets/guy.jpg";
-import quayMat from "assets/quayMat.jpg";
+import guy from "@/public/assets/guy.jpg";
+import quayMat from "@/public/assets/quayMat.jpg";
 
-import shirtLanding from "assets/Shirt-landing.png";
-import shoeLanding from "assets/Shoe-landing.png";
-import sunglassesLanding from "assets/Sunglasses-landing.png";
+import shirtLanding from "@/public/assets/Shirt-landing.png";
+import shoeLanding from "@/public/assets/Shoe-landing.png";
+import sunglassesLanding from "@/public/assets/Sunglasses-landing.png";
 import Head from "next/head";
 import Meta from "@/components/common/Meta";
 const navItems = [
