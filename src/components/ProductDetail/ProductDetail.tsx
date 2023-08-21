@@ -2,7 +2,7 @@ import CurrentPath from "../common/CurrentPath";
 import MainContent from "./MainContent/MainContent";
 import Rating from "./Rating";
 import Image from "next/image";
-import footerImage from "@/public/assets/footer3.jpg";
+// import footerImage from "@/public/assets/footer3.jpg";
 import Product from "src/model/Product";
 import { useRouter } from "next/router";
 import { useAppDispatch } from "src/store/redux-toolkit/hooks";
@@ -39,7 +39,7 @@ export default function ProductDetail({
         <MainContent singleProduct={singleProduct} allProducts={allProducts} />
       </div>
       <div className="mt-[70px] translate-y-5">
-        <Image src={footerImage} alt="footer image" />
+        <Image src={"/assets/footer3.jpg"} alt="footer image" />
       </div>
     </>
   );

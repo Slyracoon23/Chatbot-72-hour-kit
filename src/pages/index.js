@@ -8,8 +8,8 @@ import { HiOutlineShoppingCart } from "react-icons/hi";
 import { AiFillFire } from "react-icons/ai";
 import { BsFillPlayCircleFill } from "react-icons/bs";
 import { AiFillPlaySquare } from "react-icons/ai";
-import guy from "@/public/assets/guy.jpg";
-import quayMat from "@/public/assets/quayMat.jpg";
+// import guy from "@/public/assets/guy.jpg";
+// import quayMat from "@/public/assets/quayMat.jpg";
 
 import shirtLanding from "@/public/assets/Shirt-landing.png";
 import shoeLanding from "@/public/assets/Shoe-landing.png";
@@ -130,13 +130,13 @@ const HomePage = () => {
           </div>
 
           <div className="relative w-[600px] h-[600px] shrink-0 overflow-x-hidden">
-            <Image src={guy} alt="" layout="fill" className="object-cover" />
+            <Image src={"/assets/guy.jpg"} alt="" layout="fill" className="object-cover" />
           </div>
         </div>
       </div>
       <div className="flex items-center gap-24 -mt-10 xl:mt-8 mx-auto">
         <div className="relative w-[250px] h-[250px] ml-16 shrink-0 md:hidden">
-          <Image src={quayMat} alt="" layout="fill" className="object-cover" />
+          <Image src={"/assets/quayMat.jpg"} alt="" layout="fill" className="object-cover" />
         </div>
         <div className="flex-grow">
           <div className="flex items-center gap-4 mb-6">

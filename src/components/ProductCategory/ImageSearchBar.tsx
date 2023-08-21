@@ -4,7 +4,7 @@ import saleOffImg from "@/public/assets/saleOff.png";
 import { useAppDispatch, useAppSelector } from "src/store/redux-toolkit/hooks";
 import React from "react";
 import { filterSearchActions } from "src/store/redux-toolkit/filterSearch";
-import profile from "@/public/assets/profile.jpg";
+// import profile from "@/public/assets/profile.jpg";
 
 export default function ImageSearchBar() {
   const query = useAppSelector((state) => state.filterSearch.query);
@@ -84,7 +84,7 @@ export default function ImageSearchBar() {
       sm:block
       xs:hidden"
       >
-        <Image src={profile} alt="" width={200} height={130} />
+        <Image src={"/assets/profile.jpg"} alt="" width={200} height={130} />
       </div>
     </div>
   );
