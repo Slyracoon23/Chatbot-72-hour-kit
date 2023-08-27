@@ -14,6 +14,9 @@ import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useStore from "src/store/zustand/useStore";
+import Image from "next/image";
+
+import shoeImage from "assets/Shoe-landing.png";
 interface AppProps {
   singleProduct: Product;
 }
@@ -49,7 +52,11 @@ interface AppProps {
 ///////////////////////////////////////////////////////////
 
 export default function ClothesSelection({ singleProduct }: AppProps) {
-  const [counter, setCounter] = useState(1);
+  const items = ["Item 1", "Item 2", "Item 3"];
+
+  const [counters, setCounters] = useState<number[]>(
+    Array(items.length).fill(1)
+  );
   const [sizeState, setSizeState] = useState<string | undefined>(undefined);
   const [colorState, setColorState] = useState<string | undefined>(undefined);
   const [outOfSize, setOutOfSize] = useState("");
@@ -58,12 +65,18 @@ export default function ClothesSelection({ singleProduct }: AppProps) {
   const lovedProductIds = useStore((state) => state.lovedProductIds);
   const setLoveCount = useStore((state) => state.setLoveCount);
   const isLoggedIn = useStore((state) => !!state.tokenId);
-  const incrementHandler = () => {
-    setCounter((prevCounter) => prevCounter + 1); // NOT MUTATE STATE
+  const incrementHandler = (index: number) => {
+    const newCounters = [...counters];
+    newCounters[index] += 1;
+    setCounters(newCounters);
   };
 
-  const decrementHandler = () => {
-    setCounter((prevCounter) => (counter > 1 ? prevCounter - 1 : 1));
+  const decrementHandler = (index: number) => {
+    const newCounters = [...counters];
+    if (newCounters[index] > 1) {
+      newCounters[index] -= 1;
+    }
+    setCounters(newCounters);
   };
 
   const updateSizeHandler = (size: string) => {
@@ -190,66 +203,41 @@ export default function ClothesSelection({ singleProduct }: AppProps) {
   const showLoveOutline =
     !lovedProductIds.includes(singleProduct.id) || !isLoggedIn;
 
+  ////////////////// THIS IS FOR TESTING PURPOSE ONLY  //////////////////
+
   return (
     <>
       <div>
-        <ToastContainer />
-        <div className="flex items-center justify-between mb-5">
-          <div className="flex items-center gap-5 text-lg">
-            <p className="">Size:&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <p className="font-semibold">{determineSize(sizeState)}</p>
-          </div>
-          <ul
-            className="flex items-center gap-[5px] text-lg 
-          sm:grid sm:grid-cols-3 sm:gap-x-7"
-          >
-            {singleProduct.size.map((size) => (
-              <button
-                onClick={updateSizeHandler.bind(null, size)}
-                className={`uppercase leading-none py-[10px] px-[12px] bg-[#fafafa]  
-                ${outOfSize === size && "crossed text-[#9ca3af]"}
-                ${sizeState === size ? classes.selectedSize : ""}`}
-                key={size}
-              >
-                {size}
+        {items.map((itemName, index) => (
+          <div className="flex items-center justify-between mb-10" key={index}>
+            {/* Item name on the left */}
+            <div className="flex items-center gap-5 text-lg">
+              <div className="relative h-[50px] w-[50px]">
+                {" "}
+                {/* You can adjust the size here */}
+                <Image
+                  src={shoeImage}
+                  alt={itemName}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-full"
+                />
+              </div>
+              <p className="font-semibold">{itemName}</p>
+            </div>
+
+            {/* Qty and counter on the right */}
+            <div className="flex items-center gap-[22px] px-[15px] py-[13px] bg-background-grayfa">
+              <button onClick={() => decrementHandler(index)}>
+                <GrFormSubtract className="text-2xl" />
               </button>
-            ))}
-          </ul>
-        </div>
-        <div className="flex items-center justify-between mb-5">
-          <div className="flex items-center gap-5 text-lg">
-            <p className="">Color:</p>
-            <p className="font-semibold">{determineColor(colorState)}</p>
-          </div>
-          <ul className="flex items-center gap-[8px] ">
-            {singleProduct.color.map((color) => (
-              <button
-                onClick={() => updateColorHandler(color)}
-                className={`h-6 w-6 bg-[${color}] group flex items-center justify-center`}
-                key={color}
-              >
-                {colorState === color && (
-                  <HiCheck className="text-xl text-white" />
-                )}
+              <div className="font-semibold">{counters[index]}</div>
+              <button onClick={() => incrementHandler(index)}>
+                <GrFormAdd className="text-2xl" />
               </button>
-            ))}
-          </ul>
-        </div>
-        <div className="flex items-center justify-between mb-10">
-          <div className="flex items-center gap-5 text-lg">
-            <p className="">Qty:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <p className="font-semibold">{counter}</p>
+            </div>
           </div>
-          <div className="flex items-center gap-[22px] px-[15px] py-[13px] bg-background-grayfa">
-            <button onClick={decrementHandler}>
-              <GrFormSubtract className="text-2xl" />
-            </button>
-            <div>{counter}</div>
-            <button onClick={incrementHandler}>
-              <GrFormAdd className="text-2xl" />
-            </button>
-          </div>
-        </div>
+        ))}
       </div>
       <h3 className="text-right text-[40px] font-bold mb-[30px] flex items-center gap-4 justify-end">
         {singleProduct.discount > 0 && (

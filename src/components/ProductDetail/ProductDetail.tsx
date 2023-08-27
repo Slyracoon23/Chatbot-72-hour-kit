@@ -35,7 +35,7 @@ export default function ProductDetail({
           url1={`${router.query.productCategory}'s Product`}
           url2={singleProduct.name}
         />
-        <Rating singleProduct={singleProduct} />
+        {/* <Rating singleProduct={singleProduct} /> */}
         <MainContent singleProduct={singleProduct} allProducts={allProducts} />
       </div>
       <div className="mt-[70px] translate-y-5">

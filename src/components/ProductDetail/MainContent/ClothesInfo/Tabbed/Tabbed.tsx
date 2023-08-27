@@ -20,7 +20,7 @@ export default function Tabbed({ singleProduct }: AppProps) {
   }, []);
 
   return (
-    <div id="tab-section">
+    <div>
       <Tabs
         className="text-base"
         // defaultIndex={1}

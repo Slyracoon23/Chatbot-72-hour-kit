@@ -13,6 +13,11 @@ export default function ShowClothes({ singleProduct }: AppProps) {
 
   return (
     <div className="flex flex-col gap-1">
+      <div className="bg-white px-[30px] pt-[37px] mb-[30px] relative ">
+        <h2 className="text-[33px] font-extrabold ">
+          {singleProduct.name}
+        </h2>
+      </div>
       <div className="relative max-w-[473px] h-[473px] bg-background-grayec shadow-sm">
         <Image
           src={currentImage || initialImageArr[0]}
@@ -29,25 +34,6 @@ export default function ShowClothes({ singleProduct }: AppProps) {
           </div>
         )}
       </div>
-      <ul
-        className="flex flex-col gap-1 
-      sm:hidden"
-      >
-        {twoLastImage.map((imageUrl) => (
-          <li
-            key={imageUrl}
-            className="relative max-w-[473px] h-[473px]  bg-background-grayec group"
-          >
-            <Image
-              src={imageUrl}
-              alt={singleProduct.name}
-              priority
-              layout="fill"
-              className="object-cover"
-            />
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }
