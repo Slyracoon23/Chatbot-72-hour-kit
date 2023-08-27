@@ -19,7 +19,7 @@ export default function Warranty() {
           </p>
         </div>
       </div>
-      <div className="flex items-center gap-6">
+      {/* <div className="flex items-center gap-6">
         <div className="h-12 w-12 bg-[#fed25d] flex-center rounded-lg">
           <BiShoppingBag className="text-2xl" />
         </div>
@@ -44,7 +44,7 @@ export default function Warranty() {
             repair, allowing you to decide if you wish to accept and continue.
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
