@@ -33,6 +33,10 @@ export default function PokemonCard () {
   const [statAttack, setStatAttack] = useState(null);
   const [statDefense, setStatDefense] = useState(null);
   const [statSpeed, setStatSpeed] = useState(null);
+
+  const [types, setTypes] = useState([]);
+  const [backgroundColor, setBackgroundColor] = useState("");
+
   
 
   //Generate Card
@@ -62,30 +66,20 @@ export default function PokemonCard () {
    
     // Set themeColor based on pokemon type
     const themeColor = typeColor[data.types[0].type.name];
+    
     console.log(themeColor);
     
-    //appendTypes(data.types);
-    //styleCard(themeColor);
+    setTypes(data.types.map(type => type.type.name));
+    setBackgroundColor(`radial-gradient(circle at 50% 0%, ${themeColor} 36%, #ffffff 36%)`);
   }
-  /*let appendTypes = (types) => {
-    types.forEach((item) => {
-      let span = document.createElement("SPAN");
-      span.textContent = item.type.name;
-      document.querySelector(".types").appendChild(span);
-    });
-  };
-  let styleCard = (color) => {
-    card.style.background = `radial-gradient(circle at 50% 0%, ${color} 36%, #ffffff 36%)`;
-    card.querySelectorAll(".types span").forEach((typeColor) => {
-      typeColor.style.backgroundColor = color;
-    });
-  };*/
+  
+  
   
 
   
   return (
     <div className={styles.container}>
-       <div className={styles.card}>
+       <div className={styles.card} style={{ background: backgroundColor }}>
        <p className={styles.hp}>
           <span>HP</span>
             {hp}
