@@ -13,7 +13,7 @@ export default function CartPage() {
     
     
     <div className={styles.bodyContainer}>
-      <div className="grid grid-cols-4 gap-4">
+      <div className={styles.gridContainer}>
      
           <div>
             <PokemonCard />

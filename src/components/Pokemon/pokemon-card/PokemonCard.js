@@ -84,7 +84,7 @@ export default function PokemonCard () {
           <span>HP</span>
             {hp}
         </p>
-        <img src={imgSrc} />
+        <img src="/assets/backpack-1.png" />
         <h2 className={styles.pokeName}>{pokeName}</h2>
         <div className={styles.types}>
          

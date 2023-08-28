@@ -2,7 +2,7 @@
   background-color: #eff3ff;
 }
 .container {
-  width: 100%;
+  width: 320px;
   position: relative;
   transform: translate(-50%, -50%);
   top: 50%;

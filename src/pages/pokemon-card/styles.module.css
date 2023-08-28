@@ -10,9 +10,34 @@
   position: relative;
   width: 90%;
   left: 5%;
- 
-  
-  
+}
+
+.gridContainer {
+  position: relative;
+  display: grid;
+  gap: 4px;
+  grid-template-columns: 1fr; /* By default, use 1 column */
+}
+
+/* For medium screens, use 2 columns */
+@media (min-width: 640px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For large screens, use 3 columns */
+@media (min-width: 1024px) {
+  .gridContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* For extra-large screens, use 4 columns */
+@media (min-width: 1280px) {
+  .gridContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 .card {
   position: relative;
