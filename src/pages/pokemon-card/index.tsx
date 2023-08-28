@@ -1,4 +1,3 @@
-import FrameworkList from "@/components/Pokemon/List";
 import ImageCarousel from "@/components/Pokemon/BackpackCarrosel";
 import Card from "@/components/Pokemon/CardDescription";
 import CardStats from "@/components/Pokemon/CardStats";
