@@ -64,7 +64,7 @@ const HomePage = () => {
             </div>
           </div> */}
         </div>
-        <div className="absolute items-start left-[120px] gap-20 mt-[70px] md:mt-5 md:flex-col py-4">
+        <div className="relative items-start gap-20 mt-[70px] md:mt-5 md:flex-col py-4">
           <div className="mt-10">
             <h2 className="text-3xl font-semibold mb-5">Featured Backpacks</h2>
             
