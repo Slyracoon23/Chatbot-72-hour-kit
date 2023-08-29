@@ -8,14 +8,13 @@
 
 .bodyContainer {
   position: relative;
-  width: 90%;
-  left: 5%;
+  right: 4%;
 }
 
 .gridContainer {
   position: relative;
   display: grid;
-  gap: 4px;
+  gap: 40px;
   grid-template-columns: 1fr; /* By default, use 1 column */
 }
 

@@ -17,6 +17,8 @@ import sunglassesLanding from "@/public/assets/Sunglasses-landing.png";
 import Head from "next/head";
 import Meta from "@/components/common/Meta";
 import PokemonCard from "@/components/Pokemon/pokemon-card/PokemonCard";
+import CartPage from "./pokemon-card";
+import Cart from "@/components/Cart/Cart";
 
 const navItems = [
   new NavData("Men"),
@@ -50,7 +52,7 @@ const HomePage = () => {
               <span className="font-extrabold">Evac</span>
               <span className="font-normal drop-shadow-logo">Packs</span>
               <div className="absolute top-[-3px] right-[49px] -z-10 h-14 w-14 md:right-[365px] md:top-[-2px]">
-                <Image src={backpack} alt="the sun | cosmestic content" />
+                <Image src={backpack} alt="the backpack | evacuation backpack" />
               </div>
             </a>
           </Link>
@@ -62,27 +64,13 @@ const HomePage = () => {
             </div>
           </div> */}
         </div>
-        <div className="flex items-start gap-20 mt-[70px] md:mt-5 md:flex-col py-4">
+        <div className="absolute items-start left-[120px] gap-20 mt-[70px] md:mt-5 md:flex-col py-4">
           <div className="mt-10">
             <h2 className="text-3xl font-semibold mb-5">Featured Backpacks</h2>
-            <div className="grid grid-cols-4 m-10 md:grid-cols-4 lg:grid-cols-4 gap-80">
-              <div className="pokemon-card m-2">
-                <PokemonCard 
-                  packName={"red"}/>
-              </div>
-              <div className="pokemon-card m-2">
-                <PokemonCard
-                  packName={"blue"} />
-              </div>
-              <div className="pokemon-card m-2">
-                <PokemonCard
-                  packName={"yellow"} />
-              </div>
-              <div className="pokemon-card m-2">
-                <PokemonCard
-                  packName={"green"} />
-              </div>
-            </div>
+            
+              
+              <CartPage />
+            
           </div>
         </div>
       </div>
@@ -91,14 +79,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
-{
-  /* <div className="hidden">
-        <h1 className="text-white">
-          7:25a.m 3/3/2022 Thi ra la mot giac mo. Lighthouse duy nhat ma toi co,
-          gio la chiec website nay.
-        </h1>
-        <p className="text-white">
-          6:00 9/3/2022 Lai la 1 giac mo dep... em vui ve noi chuyen voi toi
-        </p>
-      </div> */
-}
+
