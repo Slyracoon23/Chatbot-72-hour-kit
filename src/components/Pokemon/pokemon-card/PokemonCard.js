@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 
 
-export default function PokemonCard () {
+export default function PokemonCard ( {packName} ) {
   const typeColor = {
     bug: "#26de81",
     dragon: "#ffeaa7",
@@ -85,7 +85,7 @@ export default function PokemonCard () {
             {hp}
         </p>
         <img src="/assets/backpack-1.png" />
-        <h2 className={styles.pokeName}>{pokeName}</h2>
+        <h2 className={styles.pokeName}>{packName}</h2>
         <div className={styles.types}>
          
         </div>

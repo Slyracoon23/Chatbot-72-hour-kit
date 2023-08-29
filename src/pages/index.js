@@ -1,7 +1,7 @@
 import Link from "next/link";
 import ActiveLinkImprove from "src/components/layout/ActiveLinkImprove";
 import { NavData } from "src/model/NavData";
-import sun from "@/public/assets/sun.png";
+import backpack from "@/public/assets/backpack_logo.png";
 import Image from "next/image";
 import { FaSearch } from "react-icons/fa";
 import { HiOutlineShoppingCart } from "react-icons/hi";
@@ -47,10 +47,10 @@ const HomePage = () => {
           w-[200px]
           md:mt-5"
             >
-              <span className="font-extrabold">Light</span>
-              <span className="font-normal drop-shadow-logo">house</span>
+              <span className="font-extrabold">Evac</span>
+              <span className="font-normal drop-shadow-logo">Packs</span>
               <div className="absolute top-[-3px] right-[49px] -z-10 h-14 w-14 md:right-[365px] md:top-[-2px]">
-                <Image src={sun} alt="the sun | cosmestic content" />
+                <Image src={backpack} alt="the sun | cosmestic content" />
               </div>
             </a>
           </Link>
@@ -67,16 +67,20 @@ const HomePage = () => {
             <h2 className="text-3xl font-semibold mb-5">Featured Backpacks</h2>
             <div className="grid grid-cols-4 m-10 md:grid-cols-4 lg:grid-cols-4 gap-80">
               <div className="pokemon-card m-2">
-                <PokemonCard />
+                <PokemonCard 
+                  packName={"red"}/>
               </div>
               <div className="pokemon-card m-2">
-                <PokemonCard />
+                <PokemonCard
+                  packName={"blue"} />
               </div>
               <div className="pokemon-card m-2">
-                <PokemonCard />
+                <PokemonCard
+                  packName={"yellow"} />
               </div>
               <div className="pokemon-card m-2">
-                <PokemonCard />
+                <PokemonCard
+                  packName={"green"} />
               </div>
             </div>
           </div>
