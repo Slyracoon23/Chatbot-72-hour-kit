@@ -81,7 +81,7 @@ export default function PokemonCard ( {packName} ) {
     <div className={styles.container}>
        <div className={styles.card} style={{ background: backgroundColor }}>
        <p className={styles.hp}>
-          <span>HP</span>
+          <span>EvacPack</span>
             {hp}
         </p>
         <img src="/assets/backpack-1.png" />
@@ -92,15 +92,15 @@ export default function PokemonCard ( {packName} ) {
         <div className={styles.stats}>
           <div>
             <h3>{statAttack}</h3>
-            <p>Attack</p>
+            <p>Capacity</p>
           </div>
           <div>
             <h3>{statDefense}</h3>
-            <p>Defense</p>
+            <p>Durability</p>
           </div>
           <div>
             <h3>{statSpeed}</h3>
-            <p>Speed</p>
+            <p>Weight</p>
           </div>
         </div>
       <button className={styles.btn}

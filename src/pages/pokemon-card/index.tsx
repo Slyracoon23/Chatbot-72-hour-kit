@@ -15,16 +15,20 @@ export default function CartPage() {
       <div className={styles.gridContainer}>
      
           <div>
-            <PokemonCard />
+            <PokemonCard 
+              packName={"spectreseek"}/>
           </div>
           <div>
-            <PokemonCard />
+            <PokemonCard
+              packName={"alterok"} />
           </div>
           <div>
-            <PokemonCard />
+            <PokemonCard
+              packName={"gaudmire"} />
           </div>
           <div>
-            <PokemonCard />
+            <PokemonCard
+              packName={"erevald"} />
           </div>
        </div>
     </div>
