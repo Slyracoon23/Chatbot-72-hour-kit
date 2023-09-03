@@ -29,8 +29,27 @@ const product = {
             src: 'https://tailwindui.com/img/ecommerce-images/product-page-03-product-01.jpg',
             alt: 'Angled front view with bag zipped and handles upright.',
         },
+        {
+            id: 2,
+            name: 'Fire starter',
+            src: 'https://m.media-amazon.com/images/I/71n+CVCCo2L._AC_UY218_.jpg',
+            alt: 'Image of a fire starter.',
+        },
+        {
+            id: 3,
+            name: 'Water bottle',
+            src: 'https://m.media-amazon.com/images/I/71u6KkU9M+L._AC_SX569_.jpg',
+            alt: 'Image of a water bottle.',
+        },
+        {
+            id: 4,
+            name: 'Flash light',
+            src: 'https://m.media-amazon.com/images/I/81ejfLH8HJL._AC_SX679_.jpg',
+            alt: 'Image of a flashlight.',
+        },
         // More images...
     ],
+
     colors: [
         { name: 'Washed Black', bgColor: 'bg-gray-700', selectedColor: 'ring-gray-700' },
         { name: 'White', bgColor: 'bg-white', selectedColor: 'ring-gray-400' },
@@ -104,7 +123,7 @@ export default function Example() {
                     {/* Image gallery */}
                     <Tab.Group as="div" className="flex flex-col-reverse">
                         {/* Image selector */}
-                        <div className="mx-auto mt-6 hidden w-full max-w-2xl sm:block max-w-none">
+                        <div className="mx-auto mt-6 w-full max-w-2xl max-w-none">
                             <Tab.List className="grid grid-cols-4 gap-6">
                                 {product.images.map((image) => (
                                     <Tab
