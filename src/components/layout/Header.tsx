@@ -1,5 +1,5 @@
 // import Image from "next/image";
-// import sun from "assets/sun.png";
+// import sun from "@/public/assets/sun.png";
 // import Navigation from "@/components/layout/Navigation";
 // import Link from "next/link";
 // import { HiOutlineUser } from "react-icons/hi";
@@ -83,7 +83,7 @@
 // }
 
 import Image from "next/image";
-import sun from "assets/sun.png";
+import sun from "@/public/assets/sun.png";
 import Navigation from "@/components/layout/Navigation";
 import Link from "next/link";
 import { HiOutlineUser } from "react-icons/hi";

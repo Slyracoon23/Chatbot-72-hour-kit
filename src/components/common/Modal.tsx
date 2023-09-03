@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import success from "assets/success.png";
-import fail from "assets/fail.png";
+import success from "@/public/assets/success.png";
+import fail from "@/public/assets/fail.png";
 import Portal from "./Portal";
 import useStore from "src/store/zustand/useStore";
 import React from "react";

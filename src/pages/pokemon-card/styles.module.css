@@ -1,0 +1,54 @@
+.container {
+  width: 350px;
+  position: relative;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.bodyContainer {
+  position: relative;
+  right: 4%;
+}
+
+.gridContainer {
+  position: relative;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr; /* By default, use 1 column */
+}
+
+/* For medium screens, use 2 columns */
+@media (min-width: 640px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For large screens, use 3 columns */
+@media (min-width: 1024px) {
+  .gridContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* For extra-large screens, use 4 columns */
+@media (min-width: 1280px) {
+  .gridContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.card {
+  position: relative;
+  width: 100%;
+  padding: 30px 20px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+.card img {
+  display: block;
+  width: 180px;
+  max-height: 200px;
+  position: relative;
+  margin: 20px auto;
+}
