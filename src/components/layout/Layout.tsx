@@ -214,7 +214,7 @@ export default function Layout({ children }: AppProps): JSX.Element {
   const isLoggedIn = useStore((state) => !!state.tokenId);
   const setLovedProductIds = useStore((state) => state.setLovedProductIds);
   const showHeader =
-    router.pathname === "/auth" || router.pathname === "/" ? false : true;
+    router.pathname === "/auth" || router.pathname === "/" || router.pathname === "/productPage" ? false : true;
   // This showHeader variable is used to decide whether or not to show not only HEADER but also FOOTER, LABELS
   const totalQuantity = useAppSelector((state) => state.cart.totalQuantity);
   const cartItems = useAppSelector((state) => state.cart.items);

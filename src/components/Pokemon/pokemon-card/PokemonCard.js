@@ -1,10 +1,12 @@
 import styles from './PokemonCard.module.css';
 import React, { useState } from 'react';
+import { useRouter } from "next/router";
 
 
 
 
-export default function PokemonCard ( {packName} ) {
+
+export default function PokemonCard({ packName }) {
   const typeColor = {
     bug: "#26de81",
     dragon: "#ffeaa7",
@@ -23,7 +25,7 @@ export default function PokemonCard ( {packName} ) {
     rock: "#2d3436",
     water: "#0190FF",
   };
-  
+
   const url = " https://pokeapi.co/api/v2/pokemon/";
   //const card = document.getElementById("card");
   //const btn = document.getElementById("btn");
@@ -36,8 +38,15 @@ export default function PokemonCard ( {packName} ) {
 
   const [types, setTypes] = useState([]);
   const [backgroundColor, setBackgroundColor] = useState("");
+  const [isGenerated, setIsGenerated] = useState(false);
 
-  
+  const router = useRouter();
+
+
+  let goToProductPage = () => {
+    router.push('/productPage');
+  };
+
 
   //Generate Card
   let getPokeData = () => {
@@ -52,8 +61,12 @@ export default function PokemonCard ( {packName} ) {
       .then((data) => {
         generateCard(data);
       });
+
+    setIsGenerated(true);
+
   };
-  
+
+
   let generateCard = (data) => {
     // Get necessary data and assign it to variables
     console.log(data);
@@ -63,31 +76,31 @@ export default function PokemonCard ( {packName} ) {
     setStatAttack(data.stats[1].base_stat);
     setStatDefense(data.stats[2].base_stat);
     setStatSpeed(data.stats[5].base_stat);
-   
+
     // Set themeColor based on pokemon type
     const themeColor = typeColor[data.types[0].type.name];
-    
+
     console.log(themeColor);
-    
+
     setTypes(data.types.map(type => type.type.name));
     setBackgroundColor(`radial-gradient(circle at 50% 0%, ${themeColor} 36%, #ffffff 36%)`);
   }
-  
-  
-  
 
-  
+
+
+
+
   return (
     <div className={styles.container}>
-       <div className={styles.card} style={{ background: backgroundColor }}>
-       <p className={styles.hp}>
+      <div className={styles.card} style={{ background: backgroundColor }}>
+        <p className={styles.hp}>
           <span>EvacPack</span>
-            {hp}
+          {hp}
         </p>
         <img src="/assets/backpack-1.png" />
         <h2 className={styles.pokeName}>{packName}</h2>
         <div className={styles.types}>
-         
+
         </div>
         <div className={styles.stats}>
           <div>
@@ -103,18 +116,22 @@ export default function PokemonCard ( {packName} ) {
             <p>Weight</p>
           </div>
         </div>
-      <button className={styles.btn}
-              onClick={getPokeData}
-              >
-                Generate
-              </button>
+        {isGenerated ? (
+          <button  className={styles.btn} onClick={goToProductPage}>
+            Check out Backpack
+          </button>
+        ) : (
+          <button className={styles.btn} onClick={getPokeData}>
+            Generate
+          </button>
+        )}
+      </div>
+
+
     </div>
-        
-    
-    </div>
-   
-    
-   
+
+
+
   )
 }
 
