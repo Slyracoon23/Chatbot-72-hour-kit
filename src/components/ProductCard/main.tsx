@@ -90,7 +90,7 @@ const footerNavigation = {
     ],
 }
 
-function classNames(...classes) {
+function classNames(...classes: any[]) {
     return classes.filter(Boolean).join(' ')
 }
 
@@ -99,7 +99,7 @@ export default function Example() {
     const [selectedColor, setSelectedColor] = useState(product.colors[0])
 
     return (
-        <div class="max-w-4x1 mx-auto  rounded overflow-hidden shadow-lg  pb-4 pr-4">
+        <div className="max-w-4x1 mx-auto  rounded overflow-hidden shadow-lg  pb-4 pr-4">
             <main className="mx-auto max-w-7xl sm:px-6 sm:pt-16 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:max-w-none">
                     {/* Product */}

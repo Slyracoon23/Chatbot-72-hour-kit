@@ -109,7 +109,7 @@ const product = {
 
 }
 
-function classNames(...classes) {
+function classNames(...classes: any[]) {
     return classes.filter(Boolean).join(' ')
 }
 
@@ -118,7 +118,7 @@ export default function Example() {
 
     return (
         <div className="bg-white">
-            <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 max-w-7xl px-8">
+            <div className="mx-auto max-w-full px-4 py-16 sm:px-6 sm:py-24 max-w-7xl px-8">
                 <div className="grid grid-cols-2 items-start gap-x-8">
                     {/* Image gallery */}
                     <Tab.Group as="div" className="flex flex-col-reverse">
